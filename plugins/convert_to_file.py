@@ -28,10 +28,10 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
-from pyrogram import Filters
+from pyrogram import filters
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["c2f"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["c2f"]))
 async def convert_to_file(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.send_message(
